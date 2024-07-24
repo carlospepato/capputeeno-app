@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { FilterTypes } from "../types/filter-types";
 
-interface FilterContextProps {
+export interface FilterContextProps {
   search: string;
   page: number;
   type: string;
@@ -10,13 +10,13 @@ interface FilterContextProps {
   handlesetType: (value: string) => void;
 }
 
-const FilterContext = createContext<FilterContextProps>({
+export const FilterContext = createContext<FilterContextProps>({
   search: '',
   page: 1,
   type: FilterTypes.ALL,
-  handleSetSearch: () => {},
-  handlesetPage: () => {},
-  handlesetType: () => {},
+  handleSetSearch: () => { },
+  handlesetPage: () => { },
+  handlesetType: () => { },
 });
 
 interface FilterContextProviderProps {
