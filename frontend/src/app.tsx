@@ -1,8 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header } from "./components/header";
+import { ProductInfo } from "./pages/product-info";
+import { Checkout } from "./pages/checkout";
+import { Home } from "./pages/home";
+
 export function App() {
   return (
-    <div>
-      <h1 className="underline font-saira">Hello world</h1>
-      <h1 className="font-Logo text-4xl text-zinc-600">capputeeno</h1>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="products/:id" element={<ProductInfo />} />
+          <Route path="checkout" element={<Checkout />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
